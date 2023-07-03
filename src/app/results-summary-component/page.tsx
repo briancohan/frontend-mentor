@@ -1,5 +1,6 @@
 import Compare from '@/components/Compare'
 import Responsive from '@/components/Responsive'
+import getTailwindClasses from '@/lib/getTailwindClasses'
 
 import data from './data.json'
 import ResultSummary from './ResultsSummary'
@@ -28,6 +29,7 @@ const desktopSize = {
   width: 736,
   height: 512,
 }
+console.log(getTailwindClasses([mobileImage, desktopImage, mobileSize, desktopSize]))
 
 const component = <ResultSummary data={data} />
 
@@ -48,14 +50,7 @@ export default function Challenge() {
 }
 
 // Programatically Generated Tailwind Classes
-// Tailwind needs these *somewhere* in the codebase to generate the classes
-// Make sure to update the comments if the values are changed
-//
-// mobileImage.width:   w-[375px] max-w-[375px]
-// desktopImage.width:  w-[1440px] max-w-[1440px]
-// mobileSize.width:    w-[375px] max-w-[375px]
-// desktopSize.width:   w-[736px] max-w-[736px]
-// mobileImage.height:  h-[809px] max-h-[809px]
-// desktopImage.height: h-[1080px] max-h-[1080px]
-// mobileSize.height:   h-[809px] max-h-[809px]
-// desktopSize.height:  h-[512px] max-h-[512px]
+// w-[375px] min-w-[375px] max-w-[375px] h-[809px] min-h-[809px] max-h-[809px]
+// w-[1440px] min-w-[1440px] max-w-[1440px] h-[1080px] min-h-[1080px] max-h-[1080px]
+// w-[375px] min-w-[375px] max-w-[375px] h-[809px] min-h-[809px] max-h-[809px]
+// w-[736px] min-w-[736px] max-w-[736px] h-[512px] min-h-[512px] max-h-[512px]
