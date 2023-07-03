@@ -15,6 +15,7 @@ interface ResponsiveProps {
 }
 
 const Responsive: React.FC<ResponsiveProps> = ({ children, mobileSize, desktopSize }) => {
+  const minWidth = `min-w-[${Math.min(mobileSize.width, desktopSize.width)}px]`
   const maxWidth = `max-w-[${Math.max(mobileSize.width, desktopSize.width)}px]`
   const maxHeight = `max-h-[${Math.max(mobileSize.height, desktopSize.height)}px]`
 
@@ -26,7 +27,7 @@ const Responsive: React.FC<ResponsiveProps> = ({ children, mobileSize, desktopSi
       </div>
 
       <div>
-        <div className={clsx('mx-auto overflow-hidden resize-x', maxHeight, maxWidth)}>{children}</div>
+        <div className={clsx('mx-auto overflow-hidden resize-x', maxHeight, minWidth, maxWidth)}>{children}</div>
       </div>
 
       <div className='absolute flex items-center justify-center w-full text-zinc-200 bottom-10 animate-bounce'>
