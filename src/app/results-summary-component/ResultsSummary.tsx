@@ -24,19 +24,23 @@ const ResultSummary: React.FC<ResultSummaryProps> = ({ data }) => {
     <div className={clsx('@container h-full w-full font-medium text-[18px]', font.className)}>
       <div className='w-full h-full bg-white flex flex-col @[376px]:grid @[376px]:grid-cols-2 @[376px]:rounded-3xl'>
         <div className='flex flex-col items-center text-center text-[#CAC9FF] gap-4 p-6 bg-gradient-to-b from-[#6943FF] to-[#2F2CE9] rounded-b-3xl @[376px]:rounded-3xl'>
-          <div className='pb-2 text-lg font-bold'>Your Result</div>
+          <div className='pb-2 text-lg @[376px]:text-2xl @[376px]:pt-3 font-bold'>Your Result</div>
 
-          <div className='flex flex-col w-28 h-28 items-center rounded-full relative bg-gradient-to-b from-[#4d21c9] to-[#2521C9]/0 p-8'>
-            <span className='absolute text-5xl font-extrabold text-white top-6'>76</span>
+          <div className='flex flex-col w-32 h-32 @[376px]:w-44 @[376px]:h-44 items-center rounded-full relative bg-gradient-to-b from-[#4d21c9] to-[#2521C9]/0 p-8'>
+            <span className='absolute text-6xl @[376px]:text-7xl @[376px]:top-16 font-extrabold text-white top-6'>
+              76
+            </span>
             <span className='absolute bottom-3'>of 100</span>
           </div>
 
-          <div className='text-xl font-bold text-white'>Great</div>
+          <div className='mt-3 text-2xl font-bold text-white'>Great</div>
 
-          <div>You scored higher than 65% of the people who have taken these tests.</div>
+          <div className='px-12 pb-3 -mt-1 text-sm'>
+            You scored higher than 65% of the people who have taken these tests.
+          </div>
         </div>
 
-        <div className='flex flex-col justify-between w-full h-full gap-4 p-10'>
+        <div className='flex flex-col justify-between w-full h-full gap-4 py-6 mb-3 px-9'>
           <div className='font-bold text-[#303B59]'>Summary</div>
 
           {data &&
